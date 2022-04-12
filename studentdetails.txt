@@ -45,7 +45,7 @@ CREATE TABLE tblsubjects(
 /****************************************************************/
 creating table -3
  
-    CREATE TABLE Marks(
+    CREATE TABLE marks(
     Id int NOT Null auto_increment,
     refstudentid int,
     refsubjectid int,
@@ -54,6 +54,7 @@ creating table -3
     foreign key (refstudentid) references studentdetails (Id),
     foreign key (refsubjectid) references tblsubjects (Id)
 );
+
 
 /******************************************************************/
 insert values in table1,table2 and table 3
@@ -65,8 +66,8 @@ VALUES ('Anil','TVM',''),('Ajay','KLM',''),('Hari','TCR',''),('Arun','CLT',''),(
 INSERT INTO tblsubjects(txtsubjectN)
 VALUES ('English'),('Maths'),('Science'),('History'),('Chemistry');
 
-INSERT INTO marks (refstudentid,refsubjectid,txtsubjectN,marks)
-VALUES (1,1,'English',20);
+INSERT INTO marks (refstudentid,refsubjectid,marks)
+VALUES (1,1,20),(1,2,30),(1,3,10),(1,4,44),(1,5,32);
 
 INSERT INTO marks (refstudentid,refsubjectid,marks)
 VALUES (2,1,28),(2,2,26),(2,3,35),(2,4,44),(2,5,29);
