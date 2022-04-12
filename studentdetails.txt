@@ -97,20 +97,22 @@ where marks<20;
 
 set sql_safe_updates=0;
 /*****************************************************************/
-/*Show the student with  maximum of marks for Science*/			
+/*Show the student with  maximum marks in Science*/			
 
-Select marks,studentdetails
-from
-studentdetails s
-join
-marks m on s.id=m.refstudentid
-join
-tblsubjects b on m.refsubjectid=b.id
-where
-tblsubjects.txtsubjectN='Science'
-group by m.marks
-order by m.marks Desc
-Limit 1;
+SELECT 
+    m.marks, s.txtstudentname
+FROM
+    studentdetails s
+        JOIN
+    marks m ON s.id = m.refstudentid
+        JOIN
+    tblsubjects b ON m.refsubjectid = b.id
+WHERE
+    b.txtsubjectN = 'Science'
+GROUP BY m.marks
+ORDER BY m.marks DESC
+LIMIT 1;
+
 /*******************************************************************/
 
 
