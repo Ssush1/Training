@@ -1,0 +1,152 @@
+LOGIN-
+
+API for Uservalidate:
+
+case1:-
+
+Req:
+{
+  "username": "Vandana123",
+  "password": "mmnne"
+}
+
+Res:
+
+[
+    {
+        "RefUserRole": 1
+    }
+]
+
+/********************************************************/
+Case2:-
+
+Req:
+
+
+{
+  "username": "Vendy",
+  "password": "mmnne"
+}
+
+
+Res:
+
+user doesn't exist go to signup
+
+/***********************************************************/
+API for Userfetch:
+
+Req:
+
+[]
+
+
+Res:
+
+
+[
+    {
+        "txtUsername": "Ajay123",
+        "txtPassword": "xxyyz"
+    },
+    {
+        "txtUsername": "Vandana123",
+        "txtPassword": "mmnne"
+    },
+    {
+        "txtUsername": "Waqar123",
+        "txtPassword": "ttyyh"
+    },
+    {
+        "txtUsername": "Nora123",
+        "txtPassword": "llkkd"
+    },
+    {
+        "txtUsername": "Vendy",
+        "txtPassword": "wwssd"
+    }
+]
+
+/*********************************************************/
+API for Userinsert:
+
+Req:
+
+{
+    "txtUsername": "Vendy",
+    "txtPassword": "wwssd",
+    "RefUserRole": 1
+  }
+
+
+Res:
+
+{
+    "fieldCount": 0,
+    "affectedRows": 1,
+    "insertId": 5,
+    "serverStatus": 2,
+    "warningCount": 0,
+    "message": "",
+    "protocol41": true,
+    "changedRows": 0
+}
+
+/*************************************************************************/
+BOARD-
+Req: 
+{}
+
+Res:
+
+[
+    {
+        "id": 1,
+        "txtUserrole": "SeniorManager"
+    },
+    {
+        "id": 2,
+        "txtUserrole": "Manager"
+    },
+    {
+        "id": 3,
+        "txtUserrole": "TL"
+    },
+    {
+        "id": 4,
+        "txtUserrole": "Empl1"
+    },
+    {
+        "id": 5,
+        "txtUserrole": "Emp2"
+    },
+    {
+        "id": 6,
+        "txtUserrole": "Emp3"
+    }
+]
+/*********************************************************************************************/
+PROJECT:
+
+Projectfetch:
+
+Req:
+
+{
+    "id": 5
+}
+
+Res:
+
+[
+    {
+        "txtName": "IncomeTax",
+        "txttype": "Business",
+        "refprojectOwner": 1,
+        "dtEststartdate": "2022-04-21T05:30:00.000Z",
+        "dtestenddate": "2022-05-07T01:00:00.000Z"
+    }
+]
+/************************************************************************************************/
+

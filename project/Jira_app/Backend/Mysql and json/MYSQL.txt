@@ -1,0 +1,35 @@
+/********create db**********/
+
+create database agileprom;
+
+/*********************************************************************************/
+/*******Creating tables************/
+
+CREATE TABLE tblUerRoles (
+    Id INT NOT NULL AUTO_INCREMENT,
+    txtUserRole VARCHAR(50) NOT NULL,
+    PRIMARY KEY (Id)
+);
+
+
+CREATE TABLE tblUsers (
+    Id INT NOT NULL AUTO_INCREMENT,
+    txtUsername VARCHAR(50) NOT NULL,
+    txtPassword VARCHAR(50) NOT NULL,
+    RefUserRole INT NOT NULL,
+    PRIMARY KEY (Id),
+    FOREIGN KEY (refuserRole)
+        REFERENCES tbluerroles (Id)
+);
+
+CREATE TABLE tblLogs (
+    Id INT NOT NULL AUTO_INCREMENT,
+    txtStatus VARCHAR(10) NOT NULL,
+    txtPassword VARCHAR(50) NOT NULL,
+    RefUserRole INT NOT NULL,
+    PRIMARY KEY (Id),
+    FOREIGN KEY (refuserRole)
+        REFERENCES tbluerroles (Id)
+);
+
+/********************************************************************************************/
