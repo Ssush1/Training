@@ -1,0 +1,3 @@
+Q1: Find topic count of third assignee is odd or even
+
+Ans: attempted but didn't get the proper answer

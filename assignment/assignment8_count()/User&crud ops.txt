@@ -1,0 +1,112 @@
+
+Create database employee1;
+
+/****************************************************************************************/
+
+Create table citizens(
+id	int auto_increment,
+title	varchar(100),
+author	varchar(100),
+published_date date,
+Country varchar(100),
+Primary key (id)
+);
+
+/***************************************************************************************/
+/************alter table id to begin from 1010.*******************/
+
+ALTER TABLE citizens AUTO_INCREMENT=1010;
+
+/**************************************************************************************/
+
+INSERT INTO citizens(title,author,published_date,Country)
+VALUES ('The Hobbit','Tolkien',	'1937-09-21','India'),
+('The Silmarillion','Tolkien','09-15-1977','United States'),
+('The Name of the wind','Rothfuss','03-27-2007','Germany'),
+('The Wise Man s Fear','Rothfuss','03-01-2011','Japan'),
+('The doors of stone','Rothfuss',NULL,'Spain'),
+('Beowulf',	NULL,'01-01-1000','Spain'),
+('Advanced Pascal','Scribner','25-04-1958',''),	
+('Guide Network','Dover','23-09-1968',''),	
+('Sun Also Rises','Herringway',	'13-05-2001','Country'),
+('Macbeth','Shakespeare','08-06-1963','Japan'),
+('Farewell to Anns','Herringway','03-09-1989','	Germany'),
+('The Illiad',NULL,26-06-1990,'Turkey'),
+('The odessey','Dover','15-03-1992','United States'),
+('On the road','Jack Kerumauc',	NULL,'India'),
+('War and peace','Leo Tolstoy',	'14-02-2010','Australia');
+
+
+/*************************************************************************************/
+/***Q1 : We have some records in the books table. Find NULL from Multiple Columns****/	
+
+SELECT *
+FROM citizens
+WHERE title IS NULL or author is null or published_date is null or Country;
+
+
+/******************************************************************************************************/
+/*******Q2 : We have some records in the books table. Filtering NULL from Multiple Columns
+*******/
+
+
+
+/**********************************************************************************/
+/**Q3 : Select Book published data Between Two Dates, 08-06-1963 to 26-06-1990**/
+
+
+/**********************************************************************************/
+/*********Q4 : Write query to return even number rows?************/
+
+
+
+select id,title,author,published_date,Country from citizens where id%2=0;
+
+
+/****************************************************************************************/
+/***Q5 : Select books title of the auther Herringway and Dover by using case function.***/
+
+
+
+SELECT id,title,author,
+CASE
+    WHEN author =  'Herringway' THEN 'Herringway'
+    WHEN author = 'Dover' THEN 'Dover'
+    ELSE '--'
+END AS authoredby
+FROM citizens;
+
+/**********************************************************************************/
+/**Q6 : Node.js & Express CRUD Example - to storing data in JSON file.***/
+
+/****Q:updating field"author"in the table citizen****/
+
+Req:
+    {}
+
+Res:
+
+{
+    "fieldCount": 0,
+    "affectedRows": 1,
+    "insertId": 0,
+    "serverStatus": 2,
+    "warningCount": 0,
+    "message": "(Rows matched: 1  Changed: 1  Warnings: 0",
+    "protocol41": true,
+    "changedRows": 1
+}
+
+/************************************************************************************/
+
+
+
+
+
+
+
+
+
+
+
+

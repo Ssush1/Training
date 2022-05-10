@@ -1,0 +1,31 @@
+/****Table creation****/
+
+create table Staff(
+   id int not null auto_increment,
+   Txtname varchar(15),
+   Gender varchar(15),
+   age int,
+   city varchar(15),
+   Primary key (id)
+   );
+/****************************************************************/
+
+   ALTER TABLE staff AUTO_INCREMENT=1001;
+
+/****************************************************************/
+
+
+insert into staff (Txtname,Gender,age,city)
+    values( 'john','male',25,'london'),
+    ('mary','female',27,null),
+    ('James','male',28,'london'),
+    (null,'male',28,null),
+    ('anurag','male',25,null),
+    ('pranaya','female',27,'mumbai'),
+    ('sambit','male',28,'mumbai');
+    
+/*****************************************************************/    
+Q: Replace with the text NA where the city column value is NULL by using COALESCE function
+
+Ans: Attempted but not got the correct answer
+

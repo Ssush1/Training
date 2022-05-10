@@ -1,0 +1,57 @@
+
+create database student_exam;
+
+/**********************************************************************************/
+
+CREATE TABLE students (
+    id INT AUTO_INCREMENT,
+    Student_name VARCHAR(20),
+    Student_Class VARCHAR(10),
+    TtlExamGn VARCHAR(100),
+    PRIMARY KEY (id)
+);
+
+/**********************************************************************************/
+
+
+INSERT INTO students
+(Student_name, Student_Class, TtlExamGn )
+VALUES
+    ('Sayan', 'IX', 8 ),
+    ('Nitin', 'X',  5 ),
+    ('Aniket', 'XI', 6 ),
+    ('Abdur', 'X',  7 ),
+    ('Riya', 'IX', 4 ),
+    ('Jony', 'X', 10 ),
+    ('Deepak', 'X',  7 ),
+    ('Ankana', 'XII', 5 ),
+    ('Shreya', 'X',  8 ) ;
+    
+/***********************************************************************************/   
+/****Q1: Find whether a student has appeared total odd number of exam or even?****/
+
+
+SELECT 
+    id,
+    Student_name,
+    Student_Class,
+    TtlExamGn,
+    CASE
+        WHEN TtlExamGn % 2 = 0 
+        THEN 'even no. of exams'
+        ELSE 'odd number of exams'
+    END AS Number of Exams
+       FROM
+    students;
+
+/***********************************************************************************/
+
+
+    
+   
+
+    
+    
+    
+    
+
