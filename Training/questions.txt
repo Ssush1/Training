@@ -1,0 +1,85 @@
+q1.Insert two rows of data to 'studentdetail' table.
+				/
+
+INSERT INTO studentdetails (txtstudentname,district,txtstatus)
+VALUES ('Abha','TVM',''),('vinod','KLM',''),('pooja','TCR','');
+/*************************************************************************************/
+q2.Fetch data from the 'studentdetail' table.		
+
+
+SELECT * FROM assignment2.studentdetails;
+
+/*****************************************************************/
+q3.Update column 'Marks' with 40 where id = 8 in table 'Mark'
+
+	
+    UPDATE marks
+SET 
+    marks = 40
+WHERE
+    Id=8;	
+/******************************************************************/
+q4.Alter table 'studentdetail' table with DateOfBirth date.
+
+
+ALTER TABLE studentdetails
+add column dateofbirth date not null ;	
+
+ALTER TABLE studentdetails
+drop column dateofbirth;	
+		
+ALTER TABLE studentdetails
+add column dateofbirth date not null ;	
+/**********************************************************************/
+q5.Sorting the table Mark based on column Marks				
+
+
+SELECT 
+    refstudentid,
+    SUM(marks) AS 'total mark'
+FROM
+    marks
+GROUP BY refstudentid
+ORDER BY sum(marks) DESC
+/*********************************************************************/
+q6.Find the mininimum of column Marks in Mark table by using min() function		
+
+
+select
+refstudentid,min(marks) as 'Minimum marks' from marks;
+
+/***********************************************************************/
+q7.Find the maximum of column Marks in Mark table by using max() function	
+
+
+select
+refstudentid,max(marks) as 'Maximum marks' from marks;	
+/*****************************************************************************/
+q8.Create a index for marks column field in Mark table		
+
+
+CREATE INDEX idx_Markdet
+ON marks (marks);
+
+/*****************************************************************************/
+q9.Use inner join with table Student Details and Mark. 		
+
+		
+SELECT 
+s.id,s.txtstudentname,m.marks
+FROM
+    studentdetails s
+        JOIN
+    marks m ON s.id = m.refstudentid
+        WHERE
+    m.marks>30
+/*****************************************************************************/
+q10. Delete data from 'studentdetail' table WHERE id=5	
+
+
+DELETE FROM studentdetails 
+WHERE
+    Id=5;							
+
+/*****************************************************************************/
+
