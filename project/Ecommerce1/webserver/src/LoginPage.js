@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom'
 function LoginPage() {
   const [username, setUserName] = useState('')
   const [password, setPassword] = useState('')
+  const [errormessage, setErrorMessage] = useState('');
   const navigate = useNavigate()
   function newclick(e) {
     e.preventDefault()

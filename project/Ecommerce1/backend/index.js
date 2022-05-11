@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 5000
+const port = 8000
 const mysql = require('mysql')
 app.use(express.json())
 
@@ -32,6 +32,6 @@ app.post('/Uservalidate', function (req, res) {
 })
 
 
-app.listen(5000, () => {
+app.listen(8000, () => {
   console.log(`Example app listening on port ${port}`)
 })
