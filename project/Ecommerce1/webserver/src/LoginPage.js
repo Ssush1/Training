@@ -4,6 +4,8 @@ import axios from 'axios'
 
 import { useState } from 'react'
 
+import {Reactsession } from 'react-client-session'
+
 import { useNavigate } from 'react-router-dom'
 
 function LoginPage() {
@@ -37,6 +39,10 @@ function LoginPage() {
 
         if (res.data.length > 0) {
           setErrorMessage('Success')
+
+          Reactsession.set("username",username);
+          Reactsession.set("password",password);
+          Reactsession.set("id",result[0].data);
 
           navigate('/dashboard')
         } else {
