@@ -1,75 +1,97 @@
-import axios from 'axios'
-import { useState } from 'react'
 import './style.css'
+
+import axios from 'axios'
+
+import { useState } from 'react'
+
 import { useNavigate } from 'react-router-dom'
 
 function LoginPage() {
   const [username, setUserName] = useState('')
+
   const [password, setPassword] = useState('')
-  const [errormessage, setErrorMessage] = useState('');
+
+  const [errormessage, setErrorMessage] = useState('')
+
   const navigate = useNavigate()
-  function newclick(e) {
-    e.preventDefault()
-    navigate('./SignupPage')
+
+  function handleClick() {
+    var req = { username: username, password: password }
+
+    var url = 'http://localhost:8000/uservalidate'
+
+    var header = {}
+
+    console.log(req)
+
+    console.log(url)
+
+    console.log(header)
+
+    axios
+
+      .post(url, req, header)
+
+      .then((res) => {
+        console.log(res.data)
+
+        if (res.data.length > 0) {
+          setErrorMessage('Success')
+
+          navigate('/dashboard')
+        } else {
+          setErrorMessage('Error in Username Or Password')
+        }
+      })
+
+      .catch((err) => {
+        console.log(err)
+      })
   }
 
-  function handleclick(e) {
-    e.preventDefault()
-    let req = { username: username, password: password }
-    let url = 'http://localhost:8000/uservalidate'
-    let header = {}
-    
-    axios.post(url, req, header).then((res) => {
-      if (res.data.length > 0) {
-        setErrorMessage('success')
-        navigate('./Dashboard')
-      } else {
-        setErrorMessage('Error in Username Or Password')
-      }
-    })
+  function newClick() {
+    navigate('/SignUp')
   }
-
 
   return (
     <div>
-      <h1>Login</h1>
-      <div className="textbox">
+      <h1>LOGIN</h1>
+
+      <div>
         <label>Username</label>
+
         <input
-          type="text"
           value={username}
           onChange={(e) => {
             setUserName(e.target.value)
           }}
+          type="text"
         />
       </div>
+
       <div>
+        <p className="errormessage">{errormessage}</p>
+
         <label>Password</label>
+
         <input
-          type="text"
           value={password}
           onChange={(e) => {
             setPassword(e.target.value)
           }}
+          type="password"
         />
       </div>
-      <br></br>
-      <div>
-        <button className="login" onClick={handleclick}>
-          Login
-        </button>
-      </div>
-      <div>
-        <p
-          onClick={(e) => {
-            newclick(e)
-          }}
-          className="link"
-        >
-          New User?
-        </p>
-      </div>
+
+      <br />
+
+      <button onClick={handleClick}>LOGIN</button>
+
+      <p onClick={newClick} className="newuser">
+        NewUser?
+      </p>
     </div>
   )
 }
+
 export default LoginPage
