@@ -12,8 +12,8 @@ function Navigation() {
         <Routes>
           <Route path="/" element={<LoginPage />}></Route>
           <Route path="/SignupPage" element={<SignupPage />}></Route>
-          <Route path="/Dashboard" element={<SignupPage />}></Route>
-          <Route path="/Productlist" element={<SignupPage />}></Route>
+          <Route path="/Dashboard" element={<Dashboard />}></Route>
+          <Route path="/Productlist" element={<Productlist />}></Route>
         </Routes>
       </BrowserRouter>
     </div>

@@ -1,6 +1,9 @@
-import { useState } from 'react'
-import './style.css'
+
+Import axios from "axios";
+import { useState } from 'react';
+import './style.css';
 import { useNavigate } from 'react-router-dom'
+import axios from 'axios';
 
 function LoginPage() {
   const [username, setUserName] = useState('')
@@ -10,6 +13,15 @@ function LoginPage() {
     e.preventDefault()
     navigate('./SignupPage')
   }
+
+  function handleclick(e){e.preventDefault();
+    let req={"username":username, "password":password};
+    let url="http://http://localhost:8000/uservalidate";
+    let header={};
+    axios.post(url,req,header) .then((res)=>{console.log(res)}
+
+
+}
 
   return (
     <div>
@@ -36,7 +48,7 @@ function LoginPage() {
       </div>
       <br></br>
       <div>
-        <button className="login"> Login</button>
+        <button className="login" onClick={handleclick}> Login</button>
       </div>
       <div>
         <p
