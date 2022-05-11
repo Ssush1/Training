@@ -17,6 +17,7 @@ function LoginPage() {
     let req = { username: username, password: password }
     let url = 'http://localhost:8000/uservalidate'
     let header = {}
+    
     axios.post(url, req, header).then((res) => {
       console.log(res)
     })
