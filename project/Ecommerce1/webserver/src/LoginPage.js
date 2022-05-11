@@ -15,7 +15,7 @@ function LoginPage() {
   function handleclick(e) {
     e.preventDefault()
     let req = { username: username, password: password }
-    let url = 'http://http://localhost:8000/uservalidate'
+    let url = 'http://localhost:8000/uservalidate'
     let header = {}
     axios.post(url, req, header).then((res) => {
       console.log(res)
@@ -48,7 +48,6 @@ function LoginPage() {
       <br></br>
       <div>
         <button className="login" onClick={handleclick}>
-          {' '}
           Login
         </button>
       </div>
