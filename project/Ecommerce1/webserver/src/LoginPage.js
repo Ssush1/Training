@@ -19,9 +19,15 @@ function LoginPage() {
     let header = {}
     
     axios.post(url, req, header).then((res) => {
-      console.log(res)
+      if (res.data.length > 0) {
+        setErrorMessage('success')
+        navigate('./Dashboard')
+      } else {
+        setErrorMessage('Error in Username Or Password')
+      }
     })
   }
+
 
   return (
     <div>
