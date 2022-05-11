@@ -1,0 +1,15 @@
+const express = require('express')
+const app = express()
+const port = 3000
+
+app.post('/multiplication', (req, res) => {
+  var a = 7;
+  var b = 8;
+  var c = a * b;
+  res.send ('multiply'+c)
+})
+  
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})

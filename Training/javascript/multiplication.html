@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Multiplication table
+    </title>
+    <script>
+        function enter() {
+            var a = document.getElementById("m1").value;
+            var g = 0;
+            result="";
+            for (let i = 1; i <= 10; i++) 
+            { g = a * i;  
+                result+= a+"*"+i+"="+ g +'<br/>';
+                console.log("value of counter"+i+'<br/>');
+            } document.getElementById("result").innerHTML=result;
+
+        }
+    </script>
+</head>
+
+<body>
+    <label>
+        Enter a number
+    </label>
+    <input type="text" placeholder="enter a number" id="m1" /><br><br>
+
+    <button onclick="enter()">
+        click here
+    </button>
+    <p id="result"> </p>
+
+</body>
+
+</html>

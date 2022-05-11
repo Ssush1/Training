@@ -1,0 +1,115 @@
+.container {
+    background-color: white;
+    width: 100%;
+    height: 100vh;
+    padding-top: 50px;
+}
+
+.innerdiv {
+    background-color: rgb(203, 196, 196);
+    width: 50%;
+    margin: auto;
+    margin-top: auto;
+    margin-right: auto;
+    margin-left: 10%;
+    padding: 20px 120px 80px 90px;
+    border-radius: 8px;
+    border-color: aqua;
+    border-style: dotted;
+    padding: 40px 20px 70px 20px;
+}
+
+.innerdiv1 {
+    text-align: center;
+    padding: 0px;
+}
+
+.innerdiv2 {
+    text-align: center;
+    padding: 0px;
+}
+
+.innerdiv3 {
+    text-align: center;
+    padding: 0px;
+}
+
+.dropdn1 {
+    width: 100%;
+}
+
+.Form {
+    width: 100%;
+}
+
+.Form1 {
+    width: 50%;
+    float: left;
+}
+
+.Fnamebox {
+    width: 95%;
+}
+
+.Lnamebox {
+    width: 95%;
+}
+
+.detail1 {
+    width: 100%;
+}
+
+.detail1_1 {
+    width: 100%;
+}
+
+
+.detail2,
+.detail3,
+.detail4 {
+    width: 33%;
+    float: left;
+}
+
+.detail2 input {
+    width: 128px;
+}
+
+.detail3 select {
+    width: 200px;
+    padding: 2px 0;
+}
+
+.detail4 input {
+    width: 200px;
+}
+
+.detail5 {
+    float:left;
+    width:100%;
+}
+.detail5_1{
+    width:50%;
+    float:left;
+ }
+
+ .detail5_1.tel{
+     width:92%;
+     margin-right:10px;
+ }
+
+.box5 .persnl
+{
+    width:48%;
+    float:left;
+}
+.back{
+    text-align:left;
+    border: 0px;
+    background-color:  rgb(203, 196, 196);
+}
+.enter{
+    background-color: green; 
+    float: right;
+    height:25px;   
+}

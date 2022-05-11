@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        function sum() {
+
+            var a = parseInt(document.getElementById("f").value);
+            var b = parseInt(document.getElementById("d").value);
+            var c = a + b;
+            document.getElementById("r").value = c;
+        }
+
+        function subtract() {
+
+            var a = parseInt(document.getElementById("f").value);
+            var b = parseInt(document.getElementById("d").value);
+            var c = a - b;
+            document.getElementById("r").value = c;
+
+        }
+
+        function logic() {
+            var a = parseInt(document.getElementById("f").value);
+            var b = parseInt(document.getElementById("d").value);
+            
+            if (a, b > 10) {
+                var c = a + b;
+                console.log("value of a"+a+"valueof b"+b);
+            } 
+            else { var c = a - b;}
+            document.getElementById("r").value = c;
+        }
+
+    </script>
+</head>
+
+<body>
+    <label>
+        Number1
+    </label>
+    <input type="text" placeholder="enter your number" id="f" /><br><br>
+    <label>
+        Number2
+    </label>
+    <input type="text" placeholder="enter" id="d" /><br><br>
+
+    <button style=color:green onclick="sum()">
+
+        Add
+
+    </button>
+    <button style=color:aqua onclick="subtract()">
+
+        subtract
+    </button><br><br>
+
+    <button style=color:pink onclick="logic()">
+
+        Logic
+
+    </button>
+
+
+
+    <label>
+        Result
+    </label>
+    <input type="text" placeholder="" id="r" /><br><br>
+
+
+</body>
+
+</html>

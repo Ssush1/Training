@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        function sum() {
+
+            var a = parseInt(document.getElementById("f").value);
+            var b = parseInt(document.getElementById("d").value);
+            var c = a + b;
+            document.getElementById("r").value = c;
+        }
+
+        function subtract() {
+
+            var a = parseInt(document.getElementById("f").value);
+            var b = parseInt(document.getElementById("d").value);
+            var c = a - b;
+            document.getElementById("r").value = c;
+
+        }
+    </script>
+</head>
+
+<body>
+    <label>
+        Number1
+    </label>
+    <input type="text" placeholder="enter your number" id="f" /><br><br>
+    <label>
+        Number2
+    </label>
+    <input type="text" placeholder="enter" id="d" /><br><br>
+
+    <button onclick="sum()">
+
+        Add
+
+    </button>
+    <button onclick="subtract()">
+
+        subtract
+
+    </button><br><br>
+
+
+    <label>
+        Result
+    </label>
+    <input type="text" placeholder="" id="r" /><br><br>
+
+
+</body>
+
+</html>

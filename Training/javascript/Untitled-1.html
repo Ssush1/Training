@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Pyramid table
+    </title>
+    <script>
+        function mlp() {
+            var a = document.getElementById("m1").value;
+            result="";
+            for (let i = 1; i <= 6; i++)
+            {for(let j=1;j<=i;j++){
+                result+=a*1+'<br/>';}
+ }document.getElementById("result").innerHTML=result;}
+
+ 
+            
+    </script>
+</head>
+
+<body>
+    <label>
+        Enter a number
+    </label>
+    <input type="text" placeholder="enter a number" id="m1" /><br><br>
+
+    <button onclick "mlp()">
+        click here
+    </button>
+    <p id="result"> </p>
+
+</body>
+
+</html>

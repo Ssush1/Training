@@ -1,0 +1,284 @@
+Signup:
+
+1) Countryfetch
+Req: 
+
+Res: [
+    {
+        "Id": 1,
+        "txtcountryname": "India"
+    },
+    {
+        "Id": 2,
+        "txtcountryname": "africa"
+    },
+/******************************************************************************************************************************************/
+2) Statefetch
+
+Req: {"CountryId":1}
+
+Res: [
+    {
+        "id": 1,
+        "txtStatename": "Karnataka"
+    },
+    {
+        "id": 2,
+        "txtStatename": "Goa"
+    },
+    {
+        "id": 3,
+        "txtStatename": "kerala"
+    }
+]
+
+
+/********************************************************************************************************************************************/
+/*******************************************************************************************************************************************/
+3) UserInsert
+
+Req: 
+
+Res:{
+    "fieldCount": 0,
+    "affectedRows": 1,
+    "insertId": 5,
+    "serverStatus": 2,
+    "warningCount": 0,
+    "message": "",
+    "protocol41": true,
+    "changedRows": 0
+}
+/*****************************************************************************************************************************************/
+/****************************************************************************************************************************************/
+LOGIN
+
+API for UserValidate
+
+Request 1: 
+value present in table
+
+{
+    "username":"Danny1",
+    "password":"margaret12"
+}
+
+API:Select
+
+Response:
+
+[
+    {
+        "id": 2,
+        "txtUsername": "Danny1",
+        "txtPassword": "margaret12"
+    }
+]
+
+Request 2:
+
+value not present in table
+
+{"username":"s","password":"p"}
+
+Response
+
+[]
+
+/************************************************************************************************************************************/
+/*********************************************************************************************************************************************/
+ PRODUCTLIST
+
+API for product fetch
+
+
+API: select
+
+Request:
+{}
+
+Response:
+
+
+[
+    {
+        "txtProdName": "book shelf",
+        "txtProdPrice": "rs.695",
+        "dtCreatedOn": "2022-04-30T18:30:00.000Z",
+        "dtUpdatedOn": "2022-05-02T18:30:00.000Z"
+    }
+]
+
+
+/****************************************************************************************************************************************************/
+
+EDIT PRODUCT
+
+API for fetch product by id
+
+Request:
+
+{"id":4}
+
+
+API:Select
+
+Response:
+
+[
+    {
+        "txtProdName": "shelf",
+        "txtProdPrice": "rs.695"
+    }
+]
+
+/*********************************************************************************************************************/
+API for Update product:
+
+Request:
+
+{
+    "id":4,
+    "txtProdName":"handmade shelf"
+}
+
+Response:
+
+
+{
+    "fieldCount": 0,
+    "affectedRows": 1,
+    "insertId": 0,
+    "serverStatus": 2,
+    "warningCount": 0,
+    "message": "(Rows matched: 1  Changed: 1  Warnings: 0",
+    "protocol41": true,
+    "changedRows": 1
+}
+
+
+/*********************************************************************************************************************************************/
+
+ADD PRODUCT
+
+API for fetch product
+
+Request:{}
+
+API:insert
+
+Response:
+
+{
+    "fieldCount": 0,
+    "affectedRows": 1,
+    "insertId": 2,
+    "serverStatus": 2,
+    "warningCount": 0,
+    "message": "",
+    "protocol41": true,
+    "changedRows": 0
+}
+
+/****************************************************************************************************************************************/
+/****************************************************************************************************************************************/
+
+
+Edit PROFILE
+
+API for fetch user
+
+Request:
+
+{
+    "txtUserType":"client"
+}
+
+
+API: select
+
+Response:
+
+[
+    {
+        "txtUsername": "DIana1",
+        "txtFirstName": "Diane",
+        "txtLastName": "William",
+        "txtUserType": "client"
+    },
+    {
+        "txtUsername": "Danny1",
+        "txtFirstName": "Danny",
+        "txtLastName": "Wiam",
+        "txtUserType": "client"
+    }
+]
+
+/***************************************************************************************************************************************/
+
+
+API for Update users
+
+Request:
+{
+  "txtUserType":"client"
+}
+
+API:Update
+
+Response:
+{
+    "fieldCount": 0,
+    "affectedRows": 1,
+    "insertId": 0,
+    "serverStatus": 34,
+    "warningCount": 0,
+    "message": "(Rows matched: 1  Changed: 1  Warnings: 0",
+    "protocol41": true,
+    "changedRows": 1
+}
+
+/***********************************************************************************************************************************************/
+/**********************************************************************************************************************************************/
+ORDERLIST
+API for order list
+
+Request:
+
+{}
+
+API:select
+
+Response:
+
+[
+    {
+        "id": 1,
+        "txtOrderNo": "3214",
+        "refUser": 2,
+        "txtOrderAmount": "7689",
+        "dtCreatedOn": "2022-04-01T18:30:00.000Z",
+        "dtUpdatedOn": "2022-04-09T18:30:00.000Z"
+    },
+    {
+        "id": 2,
+        "txtOrderNo": "3314",
+        "refUser": 1,
+        "txtOrderAmount": "7989",
+        "dtCreatedOn": "2022-04-01T18:30:00.000Z",
+        "dtUpdatedOn": "2022-04-09T18:30:00.000Z"
+    }
+]
+
+/******************************************************************************************************************************************************/
+
+
+
+
+
+
+
+
+
+
+
