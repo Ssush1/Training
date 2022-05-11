@@ -1,7 +1,6 @@
-
-import axios from "axios";
-import { useState } from 'react';
-import './style.css';
+import axios from 'axios'
+import { useState } from 'react'
+import './style.css'
 import { useNavigate } from 'react-router-dom'
 
 function LoginPage() {
@@ -13,19 +12,20 @@ function LoginPage() {
     navigate('./SignupPage')
   }
 
-  function handleclick(e){e.preventDefault();
-    let req={"username":username, "password":password};
-    let url="http://http://localhost:8000/uservalidate";
-    let header={};
-    axios.post(url,req,header) .then((res)=>{console.log(res)})
-
-
-}
+  function handleclick(e) {
+    e.preventDefault()
+    let req = { username: username, password: password }
+    let url = 'http://http://localhost:8000/uservalidate'
+    let header = {}
+    axios.post(url, req, header).then((res) => {
+      console.log(res)
+    })
+  }
 
   return (
     <div>
       <h1>Login</h1>
-      <div className='textbox'>
+      <div className="textbox">
         <label>Username</label>
         <input
           type="text"
@@ -47,7 +47,10 @@ function LoginPage() {
       </div>
       <br></br>
       <div>
-        <button className="login" onClick={handleclick}> Login</button>
+        <button className="login" onClick={handleclick}>
+          {' '}
+          Login
+        </button>
       </div>
       <div>
         <p
