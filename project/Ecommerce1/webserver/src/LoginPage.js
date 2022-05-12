@@ -4,7 +4,7 @@ import axios from 'axios'
 
 import { useState } from 'react'
 
-import {Reactsession } from 'react-client-session'
+import { ReactSession } from 'react-client-session'
 
 import { useNavigate } from 'react-router-dom'
 
@@ -31,18 +31,15 @@ function LoginPage() {
     console.log(header)
 
     axios
-
       .post(url, req, header)
-
       .then((res) => {
         console.log(res.data)
-
         if (res.data.length > 0) {
           setErrorMessage('Success')
 
-          Reactsession.set("username",username);
-          Reactsession.set("password",password);
-          Reactsession.set("id",result[0].data);
+          //ReactSession.set('username', username)
+          //ReactSession.set('password', password)
+          //ReactSession.set('id', result[0].data)
 
           navigate('/dashboard')
         } else {
