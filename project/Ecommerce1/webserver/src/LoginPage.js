@@ -42,7 +42,7 @@ function LoginPage() {
           ReactSession.set('id', res.data[0])
 
           navigate('/Dashboard')
-        } else {
+        } else { 
           setErrorMessage('Error in Username Or Password')
         }
       })
@@ -86,7 +86,7 @@ function LoginPage() {
       <br />
 
       <button onClick={handleClick}>LOGIN</button>
-      <p className="errormessage">{errormessage}</p>
+      <p>{errormessage}</p>
       <p onClick={newClick} className="newuser">
         NewUser?
       </p>
