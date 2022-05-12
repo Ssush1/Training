@@ -24,11 +24,11 @@ function LoginPage() {
 
     var header = {}
 
-    console.log(req)
+    //console.log(req)
 
-    console.log(url)
+    //console.log(url)
 
-    console.log(header)
+    //console.log(header)
 
     axios
       .post(url, req, header)
@@ -37,16 +37,15 @@ function LoginPage() {
         if (res.data.length > 0) {
           setErrorMessage('Success')
 
-          //ReactSession.set('username', username)
-          //ReactSession.set('password', password)
-          //ReactSession.set('id', result[0].data)
+          ReactSession.set('username', username)
+          ReactSession.set('password', password)
+          ReactSession.set('id', res.data[0])
 
-          navigate('/dashboard')
+          navigate('/Dashboard')
         } else {
           setErrorMessage('Error in Username Or Password')
         }
       })
-
       .catch((err) => {
         console.log(err)
       })
@@ -73,8 +72,6 @@ function LoginPage() {
       </div>
 
       <div>
-        <p className="errormessage">{errormessage}</p>
-
         <label>Password</label>
 
         <input
@@ -89,7 +86,7 @@ function LoginPage() {
       <br />
 
       <button onClick={handleClick}>LOGIN</button>
-
+      <p className="errormessage">{errormessage}</p>
       <p onClick={newClick} className="newuser">
         NewUser?
       </p>

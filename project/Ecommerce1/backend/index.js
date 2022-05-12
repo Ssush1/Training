@@ -32,17 +32,16 @@ function verifyToken(req, res, next) {
   }
 }
 
-con.connect(function(err) {
-  if (err){
-    console.log(err);
-  }else{console.log("connected");
-}
+con.connect(function (err) {
+  if (err) {
+    console.log(err)
+  } else {
+    console.log('connected')
   }
-
-);
-
+})
 
 app.post('/uservalidate', function (req, res) {
+  
   var usrname = req.body.username
 
   var passwrd = req.body.password
@@ -54,33 +53,33 @@ app.post('/uservalidate', function (req, res) {
     passwrd +
     "';"
 
-    con.query(a, function (err, result) {
-      if (err) throw err;
-      res.send(result);
+  con.query(a, function (err, result) {
+    //if (err) throw err
+    //res.send(result)
 
-      if (result.length > 0) {
-    const usr = result[0]
-    jwt.sign({ user: usr }, "secretkey", (err, token) => {
-      if (err) res.send(err)
-      else { res.json({token: token })
+    if (result.length > 0) {
+      const usr = result[0]
+      jwt.sign({ user: usr }, 'secretkey', (err, token) => {
+        if (err) res.send(err)
+        else {
+          res.json({ token: token })
+        }
+      })
+    } else {
+      res.json({ token: '' })
     }
   })
-  } else {
-    res.json({ token: '' })
-  }
 })
-});
-
 
 app.post('/getproducts', verifyToken, (req, res) => {
-  result = [
-    { Id: '1', txtprdName: 'sample', Rate: '100', Tax: '18' },
-    { Id: '2', txtprdName: 'sample2', Rate: '100', Tax: '18' },
-    { Id: '3', txtprdName: 'sample3', Rate: '100', Tax: '18' },
-  ]
-  res.send(result)
+result = [
+{ Id: '1', txtprdName: 'sample', Rate: '100', Tax: '18' },
+{ Id: '2', txtprdName: 'sample2', Rate: '100', Tax: '18' },
+{ Id: '3', txtprdName: 'sample3', Rate: '100', Tax: '18' },
+]
+res.send(result)
 })
-
+console.log('Hi')
 app.listen(8000, () => {
   console.log(`Example app listening on port ${port}`)
 })
