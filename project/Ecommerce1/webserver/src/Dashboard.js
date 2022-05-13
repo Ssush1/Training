@@ -15,7 +15,7 @@ function Dashboard() {
     { Id: '3', txtprdName: 'sample3', Rate: '600', Tax: '13' },
   ])
   useEffect(() => {
-    if (ReactSession.get('usrname') == undefined) {
+    if (ReactSession.get('username') == undefined) {
       navigate('/') //if we get(getting after checking in reactsession) the username then navigate to the login page
     }
     setUsrName(ReactSession.get('usrname'))

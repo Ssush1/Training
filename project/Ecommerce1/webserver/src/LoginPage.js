@@ -33,17 +33,17 @@ function LoginPage() {
     axios
       .post(url, req, header)
       .then((res) => {
-        console.log(res.data)
-        if (res.data.length > 0) {
+        console.log(res.data.token)
+        if (res.data.token === "") {
+          setErrorMessage('Error in Username Or Password')
+        } else {
           setErrorMessage('Success')
 
           ReactSession.set('username', username)
           ReactSession.set('password', password)
-          ReactSession.set('id', res.data[0])
+          ReactSession.set('token', res.data.token)
 
           navigate('/Dashboard')
-        } else { 
-          setErrorMessage('Error in Username Or Password')
         }
       })
       .catch((err) => {
